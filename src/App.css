@@ -1,0 +1,16 @@
+#root{
+    display: flex;
+    flex-direction: column;
+}
+
+.camera{
+    position: relative;
+    width: 100%;
+}
+
+.camera > button{
+    background-color: red;
+    position: absolute;
+    right: 50%;
+    bottom: 0;
+}
