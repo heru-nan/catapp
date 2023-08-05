@@ -5,14 +5,13 @@ const videoConstraints = {
   facingMode:  "environment"
 };
 
-export const WebcamCapture = () => {
+export const WebcamCapture = ({setImage}: {setImage: (a: string) => void;}) => {
   const webcamRef = React.useRef<Webcam>(null);
   const [dimensions, setDimensions] = React.useState<null | {width: number, height: number}>(null)
-  const [imageSrc, setImageSrc] = React.useState<string | null>(null);
   const capture = React.useCallback(() => {
     const imageSrc = webcamRef.current?.getScreenshot();
     if (imageSrc) {
-      setImageSrc(imageSrc);
+      setImage(imageSrc);
     }
   }, [webcamRef]);
 
